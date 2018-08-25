@@ -68,6 +68,12 @@ class FailSafe_Main:
             self.GoJorge()
         elif (receave == 'Jorge Amado'):
             self.GoJorge()
+        elif (receave == 'Me fale sobre Jorge Amado'):
+            self.GoJorge()
+        elif (receave == 'fale sobre Jorge Amado'):
+            self.GoJorge()
+        elif (receave == 'me conte sobre Jorge Amado'):
+            self.GoJorge()
         # ____Livro____#
         elif (receave == 'Me fale sobre o livro'):
             self.GoBook()
