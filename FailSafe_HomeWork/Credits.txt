@@ -1,5 +1,6 @@
-Vídeo from MEMEPÉDIA:
+Vídeo from MEMEPÉDIA, Leo Vlogs:
 https://www.youtube.com/watch?v=kBCcljgkp_Y
+https://www.youtube.com/watch?v=sb_3X-UV9j8
 
 All the voices so far have been made using the text-speech synthesizer:
 https://text-to-speech-demo.ng.bluemix.net/
