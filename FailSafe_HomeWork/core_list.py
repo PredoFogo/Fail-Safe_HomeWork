@@ -70,6 +70,9 @@ class FailSafe_Main:
         # ____Easter Eggs____#
         elif (receave == 'geração coca-cola'):
             self.GeracaoCocaCola()
+        # ____Easter Eggs 2____#
+        elif (receave == 'e o gole'):
+            self.EoGole()
 
     #Chama a tela do jorge amado
     def GoJorge(self):
@@ -88,6 +91,13 @@ class FailSafe_Main:
     #EasterEGG #1
     def GeracaoCocaCola(self):
         clip = VideoFileClip('eg1.mp4')
+        clip.preview()
+        pygame.quit()
+        self.master.mainloop()
+
+    #EasterEGG #2
+    def EoGole(self):
+        clip = VideoFileClip('eg2.mp4')
         clip.preview()
         pygame.quit()
         self.master.mainloop()
