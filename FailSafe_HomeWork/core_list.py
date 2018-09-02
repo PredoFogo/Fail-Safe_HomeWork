@@ -1,3 +1,8 @@
+'''
+Fail-Safe BY:Pedro Lucas Miguel
+A utilização deste código fonte esta aberta a todos, também estão liberadas cópias de código.
+'''
+
 #Imports
 import speech_recognition as sr
 import pygame
