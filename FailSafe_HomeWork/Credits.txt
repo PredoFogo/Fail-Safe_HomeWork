@@ -4,3 +4,6 @@ https://www.youtube.com/watch?v=sb_3X-UV9j8
 
 All the voices so far have been made using the text-speech synthesizer:
 https://text-to-speech-demo.ng.bluemix.net/
+
+Characters images from movie "Vidas Secas" All rights reserved:
+https://www.youtube.com/watch?v=HT4_SXk4GnI
