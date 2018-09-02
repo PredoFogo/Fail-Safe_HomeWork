@@ -7,6 +7,7 @@ import time
 
 #Perguntas
 
+teste_q = ['teste']
 ola_q = ['Oi','Olá','saudações']
 oque_q = ['o que você é','você é o quê','quem você é','quem é você']
 funciona_q = ['como você funciona','você funciona como']
@@ -67,6 +68,9 @@ class FailSafe_Main:
         # ____Livro____#
         elif (receave in livro_q):
             self.GoBook()
+        # ____Teste____#
+        elif (receave in teste_q):
+            self.StartR()
         # ____Easter Eggs____#
         elif (receave == 'geração coca-cola'):
             self.GeracaoCocaCola()
@@ -83,6 +87,15 @@ class FailSafe_Main:
     def GoBook(self):
         root3 = Toplevel(self.master)
         book = Book(root3)
+
+    # Chama janelas dos personagens
+    def StartR(self):
+        self.GoPB()
+
+    # Pedro Bala
+    def GoPB(self):
+        root11 = Toplevel(self.master)
+        pb = PedroBala(root11)
 
     #Fecha a janela principal
     def Destoy_Main(self):
@@ -159,6 +172,287 @@ class Book:
 
     def CloseBook(self):
         self.master.destroy()
+
+#############################################################################################################
+class BoaVida:
+    def __init__(self,master):
+        self.master = master
+        self.master.title('Boa Vida')
+        self.master.resizable(0, 0)
+        w = 493
+        h = 608
+        ws = self.master.winfo_screenwidth()
+        hs = self.master.winfo_screenheight()
+        x = (ws / 2) - (w / 2)
+        y = (hs / 2) - (h / 2)
+        self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
+        self.photo4 = PhotoImage(file='Boa Vida.png')
+        self.label = Label(self.master, image=self.photo4, bg='black').grid(row=0,column=0)
+        self.master.after(2000, self.GoPI)
+        self.master.mainloop()
+
+    # Pirulito
+    def GoPI(self):
+        root12 = Toplevel(self.master)
+        pi = Pirulito(root12)
+
+class Daninha:
+    def __init__(self,master):
+        self.master = master
+        self.master.title('D`Aninha')
+        self.master.resizable(0, 0)
+        w = 576
+        h = 723
+        ws = self.master.winfo_screenwidth()
+        hs = self.master.winfo_screenheight()
+        x = (ws / 2) - (w / 2)
+        y = (hs / 2) - (h / 2)
+        self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
+        self.photo5 = PhotoImage(file='d aninha.png')
+        self.label = Label(self.master, image=self.photo5, bg='black').grid(row=0,column=0)
+        self.master.after(2000, self.GoPJP)
+        self.master.mainloop()
+
+    # Padre Jose Pedro
+    def GoPJP(self):
+        root10 = Toplevel(self.master)
+        pjp = Padre(root10)
+
+class Dalva:
+    def __init__(self,master):
+        self.master = master
+        self.master.title('Dalva')
+        self.master.resizable(0, 0)
+        w = 373
+        h = 644
+        ws = self.master.winfo_screenwidth()
+        hs = self.master.winfo_screenheight()
+        x = (ws / 2) - (w / 2)
+        y = (hs / 2) - (h / 2)
+        self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
+        self.photo6 = PhotoImage(file='Dalva.png')
+        self.label = Label(self.master, image=self.photo6, bg='black').grid(row=0,column=0)
+        self.master.after(2000, self.GoDA)
+        self.master.mainloop()
+
+    # D'Aninha
+    def GoDA(self):
+        root5 = Toplevel(self.master)
+        da = Daninha(root5)
+
+class Dora:
+    def __init__(self,master):
+        self.master = master
+        self.master.title('Dora')
+        self.master.resizable(0, 0)
+        w = 851
+        h = 675
+        ws = self.master.winfo_screenwidth()
+        hs = self.master.winfo_screenheight()
+        x = (ws / 2) - (w / 2)
+        y = (hs / 2) - (h / 2)
+        self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
+        self.photo7 = PhotoImage(file='Dora.png')
+        self.label = Label(self.master, image=self.photo7, bg='black').grid(row=0,column=0)
+        self.master.after(2000, self.GoBV)
+        self.master.mainloop()
+
+    # Boa Vida
+    def GoBV(self):
+        root4 = Toplevel(self.master)
+        bv = BoaVida(root4)
+
+class Gato:
+    def __init__(self,master):
+        self.master = master
+        self.master.title('Gato')
+        self.master.resizable(0, 0)
+        w = 442
+        h = 709
+        ws = self.master.winfo_screenwidth()
+        hs = self.master.winfo_screenheight()
+        x = (ws / 2) - (w / 2)
+        y = (hs / 2) - (h / 2)
+        self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
+        self.photo8 = PhotoImage(file='Gato.png')
+        self.label = Label(self.master, image=self.photo8, bg='black').grid(row=0,column=0)
+        self.master.after(2000, self.GoDO)
+        self.master.mainloop()
+
+    # Dora
+    def GoDO(self):
+        root7 = Toplevel(self.master)
+        do = Dora(root7)
+
+class JoaoGrande:
+    def __init__(self,master):
+        self.master = master
+        self.master.title('João Grande')
+        self.master.resizable(0, 0)
+        w = 483
+        h = 654
+        ws = self.master.winfo_screenwidth()
+        hs = self.master.winfo_screenheight()
+        x = (ws / 2) - (w / 2)
+        y = (hs / 2) - (h / 2)
+        self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
+        self.photo9 = PhotoImage(file='Joao Grande.png')
+        self.label = Label(self.master, image=self.photo9, bg='black').grid(row=0,column=0)
+        self.master.after(2000, self.GoGA)
+        self.master.mainloop()
+
+    # Gato
+    def GoGA(self):
+        root8 = Toplevel(self.master)
+        ga = Gato(root8)
+
+class Padre:
+    def __init__(self,master):
+        self.master = master
+        self.master.title('Padre José Pedro')
+        self.master.resizable(0, 0)
+        w = 666
+        h = 714
+        ws = self.master.winfo_screenwidth()
+        hs = self.master.winfo_screenheight()
+        x = (ws / 2) - (w / 2)
+        y = (hs / 2) - (h / 2)
+        self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
+        self.photo10 = PhotoImage(file='Padre Jose Pedro.png')
+        self.label = Label(self.master, image=self.photo10, bg='black').grid(row=0,column=0)
+        self.master.after(2000, self.GoQDD)
+        self.master.mainloop()
+
+    # Querido de Deus
+    def GoQDD(self):
+        root14 = Toplevel(self.master)
+        qdd = QueridoDeDeus(root14)
+
+class PedroBala:
+    def __init__(self,master):
+        self.master = master
+        self.master.title('PedroBala')
+        self.master.resizable(0, 0)
+        w = 729
+        h = 723
+        ws = self.master.winfo_screenwidth()
+        hs = self.master.winfo_screenheight()
+        x = (ws / 2) - (w / 2)
+        y = (hs / 2) - (h / 2)
+        self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
+        self.photo11 = PhotoImage(file='Pedro Bala.png')
+        self.label = Label(self.master, image=self.photo11, bg='black').grid(row=0,column=0)
+        self.master.after(2000, self.GoPR)
+        self.master.mainloop()
+
+    # Professor
+    def GoPR(self):
+        root13 = Toplevel(self.master)
+        pr = Professor(root13)
+
+class Pirulito:
+    def __init__(self,master):
+        self.master = master
+        self.master.title('Pirulito')
+        self.master.resizable(0, 0)
+        w = 1004
+        h = 781
+        ws = self.master.winfo_screenwidth()
+        hs = self.master.winfo_screenheight()
+        x = (ws / 2) - (w / 2)
+        y = (hs / 2) - (h / 2)
+        self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
+        self.photo12 = PhotoImage(file='Pirulito.png')
+        self.label = Label(self.master, image=self.photo12, bg='black').grid(row=0,column=0)
+        self.master.after(2000, self.GoVS)
+        self.master.mainloop()
+
+    # Volta Seca
+    def GoVS(self):
+        root16 = Toplevel(self.master)
+        vs = VoltaSeca(root16)
+
+class Professor:
+    def __init__(self,master):
+        self.master = master
+        self.master.title('Professor')
+        self.master.resizable(0, 0)
+        w = 529
+        h = 788
+        ws = self.master.winfo_screenwidth()
+        hs = self.master.winfo_screenheight()
+        x = (ws / 2) - (w / 2)
+        y = (hs / 2) - (h / 2)
+        self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
+        self.photo13 = PhotoImage(file='Professor.png')
+        self.label = Label(self.master, image=self.photo13, bg='black').grid(row=0,column=0)
+        self.master.after(2000, self.GoSP)
+        self.master.mainloop()
+
+    # Sem Pernas
+    def GoSP(self):
+        root15 = Toplevel(self.master)
+        sp = SemPerna(root15)
+
+class QueridoDeDeus:
+    def __init__(self,master):
+        self.master = master
+        self.master.title('Querido de Deus')
+        self.master.resizable(0, 0)
+        w = 393
+        h = 717
+        ws = self.master.winfo_screenwidth()
+        hs = self.master.winfo_screenheight()
+        x = (ws / 2) - (w / 2)
+        y = (hs / 2) - (h / 2)
+        self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
+        self.photo14 = PhotoImage(file='Querido de deus.png')
+        self.label = Label(self.master, image=self.photo14, bg='black').grid(row=0,column=0)
+        self.master.mainloop()
+
+class SemPerna:
+    def __init__(self,master):
+        self.master = master
+        self.master.title('Sem Perna')
+        self.master.resizable(0, 0)
+        w = 748
+        h = 772
+        ws = self.master.winfo_screenwidth()
+        hs = self.master.winfo_screenheight()
+        x = (ws / 2) - (w / 2)
+        y = (hs / 2) - (h / 2)
+        self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
+        self.photo15 = PhotoImage(file='Sem Perna.png')
+        self.label = Label(self.master, image=self.photo15, bg='black').grid(row=0,column=0)
+        self.master.after(2000, self.GoJG)
+        self.master.mainloop()
+
+    # João Grande
+    def GoJG(self):
+        root9 = Toplevel(self.master)
+        jg = JoaoGrande(root9)
+
+class VoltaSeca:
+    def __init__(self,master):
+        self.master = master
+        self.master.title('Volta Seca')
+        self.master.resizable(0, 0)
+        w = 983
+        h = 653
+        ws = self.master.winfo_screenwidth()
+        hs = self.master.winfo_screenheight()
+        x = (ws / 2) - (w / 2)
+        y = (hs / 2) - (h / 2)
+        self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
+        self.photo16 = PhotoImage(file='Volta Seca.png')
+        self.label = Label(self.master, image=self.photo16, bg='black').grid(row=0,column=0)
+        self.master.after(2000, self.GoDV)
+        self.master.mainloop()
+
+    # Dalva
+    def GoDV(self):
+        root6 = Toplevel(self.master)
+        dv = Dalva(root6)
 
 #############################################################################################################
 
