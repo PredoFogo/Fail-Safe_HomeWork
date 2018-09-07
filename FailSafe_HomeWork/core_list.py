@@ -8,16 +8,31 @@ import speech_recognition as sr
 import pygame
 from tkinter import *
 from moviepy.editor import *
-import time
+import webbrowser
 
 #Perguntas
 
-teste_q = ['teste']
 ola_q = ['Oi','Olá','saudações']
 oque_q = ['o que você é','você é o quê','quem você é','quem é você']
 funciona_q = ['como você funciona','você funciona como']
 jorge_q = ['Quem é Jorge Amado','Quem foi Jorge Amado','Jorge Amado','Me fale sobre Jorge Amado','fale sobre Jorge Amado','me conte sobre Jorge Amado']
 livro_q = ['Me fale sobre o livro','me conte sobre o livro','conte sobre o livro','me conta sobre o livro','conta sobre o livro','fale sobre o livro','fala sobre o livro','defina o livro','livro']
+contexto_q = ['Me fale sobre o contexto histórico','fale sobre o contexto histórico','Qual é o contexto histórico','contexto histórico','Como é o contexto histórico']
+codigo_q = ['me mostre o seu código-fonte','me mostre como você é feita','Como é seu código-fonte','código fonte','me mostre como você é prgramada','me mostre seu código-fonte']
+obrigado_q = ['obrigado','Muito obrigado','agradeço']
+pedro_bala = ['Pedro Bala']
+professor = ['professor']
+sem_perna = ['sem pernas','sem pernas']
+joao_grande = ['João Grande']
+gato = ['gato']
+dora = ['Dora']
+pirulito = ['pirulito']
+boa_vida = ['boa vida']
+volta_seca = ['volta seca']
+dalva = ['Dalva']
+aninha = ['Aninha']
+padre = ['Padre José Pedro','Padre']
+querido = ['querido de Deus','querido']
 
 #Inicializar Pygame
 pygame.init()
@@ -67,21 +82,73 @@ class FailSafe_Main:
         elif (receave in funciona_q):
             pygame.mixer.music.load('funcionamento.mp3')
             pygame.mixer.music.play()
+        # ____Contexto histórico____#
+        elif (receave in contexto_q):
+            pygame.mixer.music.load('contexto.mp3')
+            pygame.mixer.music.play()
+        # ____Código fonte____#
+        elif (receave in codigo_q):
+            pygame.mixer.music.load('codigo.mp3')
+            new = 2
+            url = 'https://github.com/PredoFogo/Fail-Safe_HomeWork/blob/master/FailSafe_HomeWork/core_list.py'
+            webbrowser.open(url,new=new)
+            pygame.mixer.music.play()
+        # ____Obrigado____#
+        elif (receave in obrigado_q):
+            pygame.mixer.music.load('obrigado.mp3')
+            pygame.mixer.music.play()
+            self.master.after(24000, self.Destoy_Main)
         # ____Jorge Amado____#
         elif (receave in jorge_q):
             self.GoJorge()
         # ____Livro____#
         elif (receave in livro_q):
             self.GoBook()
-        # ____Teste____#
-        elif (receave in teste_q):
-            self.StartR()
         # ____Easter Eggs____#
         elif (receave == 'geração coca-cola'):
             self.GeracaoCocaCola()
         # ____Easter Eggs 2____#
         elif (receave == 'e o gole'):
             self.EoGole()
+        # ____Pedro Bala____#
+        elif (receave in pedro_bala):
+            self.GoPB()
+        # ____Professor____#
+        elif (receave in professor):
+            self.GoPR()
+        # ____Sem Pernas____#
+        elif (receave in sem_perna):
+            self.GoSP()
+        # ____João Grande____#
+        elif (receave in joao_grande):
+            self.GoJG()
+        # ____Gato____#
+        elif (receave in gato):
+            self.GoGA()
+        # ____Dora____#
+        elif (receave in dora):
+            self.GoDO()
+        # ____Pirulito____#
+        elif (receave in pirulito):
+            self.GoPI()
+        # ____Boa Vida____#
+        elif (receave in boa_vida):
+            self.GoBV()
+        # ____Volta Seca____#
+        elif (receave in volta_seca):
+            self.GoVS()
+        # ____Dalva____#
+        elif (receave in dalva):
+            self.GoDV()
+        # ____D'Aninha____#
+        elif (receave in aninha):
+            self.GoDA()
+        # ____Padre José Pedro____#
+        elif (receave in padre):
+            self.GoPJP()
+        # ____Livro____#
+        elif (receave in querido):
+            self.GoQDD()
 
     #Chama a tela do jorge amado
     def GoJorge(self):
@@ -101,6 +168,66 @@ class FailSafe_Main:
     def GoPB(self):
         root11 = Toplevel(self.master)
         pb = PedroBala(root11)
+
+    # Professor
+    def GoPR(self):
+        root13 = Toplevel(self.master)
+        pr = Professor(root13)
+
+    # Sem Pernas
+    def GoSP(self):
+        root15 = Toplevel(self.master)
+        sp = SemPerna(root15)
+
+    # João Grande
+    def GoJG(self):
+        root9 = Toplevel(self.master)
+        jg = JoaoGrande(root9)
+
+    # Gato
+    def GoGA(self):
+        root8 = Toplevel(self.master)
+        ga = Gato(root8)
+
+    # Dora
+    def GoDO(self):
+        root7 = Toplevel(self.master)
+        do = Dora(root7)
+
+    # Pirulito
+    def GoPI(self):
+        root17 = Toplevel(self.master)
+        bv = Pirulito(root17)
+
+    # Boa Vida
+    def GoBV(self):
+        root4 = Toplevel(self.master)
+        bv = BoaVida(root4)
+
+    # Volta Seca
+    def GoVS(self):
+        root16 = Toplevel(self.master)
+        vs = VoltaSeca(root16)
+
+    # Dalva
+    def GoDV(self):
+        root6 = Toplevel(self.master)
+        dv = Dalva(root6)
+
+    # D'Aninha
+    def GoDA(self):
+        root5 = Toplevel(self.master)
+        da = Daninha(root5)
+
+    # Padre Jose Pedro
+    def GoPJP(self):
+        root10 = Toplevel(self.master)
+        pjp = Padre(root10)
+
+    # Querido de Deus
+    def GoQDD(self):
+        root14 = Toplevel(self.master)
+        qdd = QueridoDeDeus(root14)
 
     #Fecha a janela principal
     def Destoy_Main(self):
@@ -143,13 +270,7 @@ class JorgeAmado:
     def AudioJorge(self):
         pygame.mixer.music.load('jorgeamado.mp3')
         pygame.mixer.music.play()
-        time.sleep(48)
-        self.CloseJorge()
-
-
-    def CloseJorge(self):
-        self.master.destroy()
-
+        self.master.after(49000, self.master.withdraw)
 
 #Janela do livro
 class Book:
@@ -172,11 +293,7 @@ class Book:
     def AudioBook(self):
         pygame.mixer.music.load('livro.mp3')
         pygame.mixer.music.play()
-        time.sleep(31)
-        self.CloseBook()
-
-    def CloseBook(self):
-        self.master.destroy()
+        self.master.after(42000, self.master.withdraw)
 
 #############################################################################################################
 class BoaVida:
@@ -193,13 +310,7 @@ class BoaVida:
         self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
         self.photo4 = PhotoImage(file='Boa Vida.png')
         self.label = Label(self.master, image=self.photo4, bg='black').grid(row=0,column=0)
-        self.master.after(2000, self.GoPI)
         self.master.mainloop()
-
-    # Pirulito
-    def GoPI(self):
-        root12 = Toplevel(self.master)
-        pi = Pirulito(root12)
 
 class Daninha:
     def __init__(self,master):
@@ -215,13 +326,7 @@ class Daninha:
         self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
         self.photo5 = PhotoImage(file='d aninha.png')
         self.label = Label(self.master, image=self.photo5, bg='black').grid(row=0,column=0)
-        self.master.after(2000, self.GoPJP)
         self.master.mainloop()
-
-    # Padre Jose Pedro
-    def GoPJP(self):
-        root10 = Toplevel(self.master)
-        pjp = Padre(root10)
 
 class Dalva:
     def __init__(self,master):
@@ -237,13 +342,7 @@ class Dalva:
         self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
         self.photo6 = PhotoImage(file='Dalva.png')
         self.label = Label(self.master, image=self.photo6, bg='black').grid(row=0,column=0)
-        self.master.after(2000, self.GoDA)
         self.master.mainloop()
-
-    # D'Aninha
-    def GoDA(self):
-        root5 = Toplevel(self.master)
-        da = Daninha(root5)
 
 class Dora:
     def __init__(self,master):
@@ -259,13 +358,7 @@ class Dora:
         self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
         self.photo7 = PhotoImage(file='Dora.png')
         self.label = Label(self.master, image=self.photo7, bg='black').grid(row=0,column=0)
-        self.master.after(2000, self.GoBV)
         self.master.mainloop()
-
-    # Boa Vida
-    def GoBV(self):
-        root4 = Toplevel(self.master)
-        bv = BoaVida(root4)
 
 class Gato:
     def __init__(self,master):
@@ -281,13 +374,7 @@ class Gato:
         self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
         self.photo8 = PhotoImage(file='Gato.png')
         self.label = Label(self.master, image=self.photo8, bg='black').grid(row=0,column=0)
-        self.master.after(2000, self.GoDO)
         self.master.mainloop()
-
-    # Dora
-    def GoDO(self):
-        root7 = Toplevel(self.master)
-        do = Dora(root7)
 
 class JoaoGrande:
     def __init__(self,master):
@@ -303,13 +390,7 @@ class JoaoGrande:
         self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
         self.photo9 = PhotoImage(file='Joao Grande.png')
         self.label = Label(self.master, image=self.photo9, bg='black').grid(row=0,column=0)
-        self.master.after(2000, self.GoGA)
         self.master.mainloop()
-
-    # Gato
-    def GoGA(self):
-        root8 = Toplevel(self.master)
-        ga = Gato(root8)
 
 class Padre:
     def __init__(self,master):
@@ -325,13 +406,7 @@ class Padre:
         self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
         self.photo10 = PhotoImage(file='Padre Jose Pedro.png')
         self.label = Label(self.master, image=self.photo10, bg='black').grid(row=0,column=0)
-        self.master.after(2000, self.GoQDD)
         self.master.mainloop()
-
-    # Querido de Deus
-    def GoQDD(self):
-        root14 = Toplevel(self.master)
-        qdd = QueridoDeDeus(root14)
 
 class PedroBala:
     def __init__(self,master):
@@ -347,13 +422,7 @@ class PedroBala:
         self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
         self.photo11 = PhotoImage(file='Pedro Bala.png')
         self.label = Label(self.master, image=self.photo11, bg='black').grid(row=0,column=0)
-        self.master.after(2000, self.GoPR)
         self.master.mainloop()
-
-    # Professor
-    def GoPR(self):
-        root13 = Toplevel(self.master)
-        pr = Professor(root13)
 
 class Pirulito:
     def __init__(self,master):
@@ -369,13 +438,7 @@ class Pirulito:
         self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
         self.photo12 = PhotoImage(file='Pirulito.png')
         self.label = Label(self.master, image=self.photo12, bg='black').grid(row=0,column=0)
-        self.master.after(2000, self.GoVS)
         self.master.mainloop()
-
-    # Volta Seca
-    def GoVS(self):
-        root16 = Toplevel(self.master)
-        vs = VoltaSeca(root16)
 
 class Professor:
     def __init__(self,master):
@@ -391,13 +454,7 @@ class Professor:
         self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
         self.photo13 = PhotoImage(file='Professor.png')
         self.label = Label(self.master, image=self.photo13, bg='black').grid(row=0,column=0)
-        self.master.after(2000, self.GoSP)
         self.master.mainloop()
-
-    # Sem Pernas
-    def GoSP(self):
-        root15 = Toplevel(self.master)
-        sp = SemPerna(root15)
 
 class QueridoDeDeus:
     def __init__(self,master):
@@ -429,13 +486,7 @@ class SemPerna:
         self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
         self.photo15 = PhotoImage(file='Sem Perna.png')
         self.label = Label(self.master, image=self.photo15, bg='black').grid(row=0,column=0)
-        self.master.after(2000, self.GoJG)
         self.master.mainloop()
-
-    # João Grande
-    def GoJG(self):
-        root9 = Toplevel(self.master)
-        jg = JoaoGrande(root9)
 
 class VoltaSeca:
     def __init__(self,master):
@@ -451,13 +502,7 @@ class VoltaSeca:
         self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
         self.photo16 = PhotoImage(file='Volta Seca.png')
         self.label = Label(self.master, image=self.photo16, bg='black').grid(row=0,column=0)
-        self.master.after(2000, self.GoDV)
         self.master.mainloop()
-
-    # Dalva
-    def GoDV(self):
-        root6 = Toplevel(self.master)
-        dv = Dalva(root6)
 
 #############################################################################################################
 
@@ -476,7 +521,7 @@ while (enter!=True):
     receave = r.recognize_google(l)
     print(receave)
     if(receave=='Fail-Safe'):
-        a = True
+        enter = True
         main()
     else:
         print("ALGO DEU ERRADO! REPITA A FRASE")
