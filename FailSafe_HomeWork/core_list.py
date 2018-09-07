@@ -9,7 +9,6 @@ import pygame
 from tkinter import *
 from moviepy.editor import *
 import webbrowser
-import time
 
 #Perguntas
 
@@ -341,7 +340,15 @@ class Daninha:
         self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
         self.photo5 = PhotoImage(file='d aninha.png')
         self.label = Label(self.master, image=self.photo5, bg='black').grid(row=0,column=0)
+        pygame.mixer.music.load('Aninha.mp3')
+        pygame.mixer.music.play()
+        self.master.after(7000, self.master.withdraw)
+        self.master.after(7800, self.GoDO)
         self.master.mainloop()
+
+    def GoDO(self):
+        root7 = Toplevel(self.master)
+        do = Dora(root7)
 
 class Dalva:
     def __init__(self,master):
@@ -374,6 +381,15 @@ class Dora:
         self.photo7 = PhotoImage(file='Dora.png')
         self.label = Label(self.master, image=self.photo7, bg='black').grid(row=0,column=0)
         self.master.mainloop()
+
+    def Releitura3(self):
+        pygame.mixer.music.load('releitura5.mp3')
+        pygame.mixer.music.play()
+        self.master.after(11000, self.Video3)
+
+    def Video3(self):
+        clip2 = VideoFileClip('releitura3.mp4')
+        clip2.preview()
 
 class Gato:
     def __init__(self,master):
@@ -437,7 +453,15 @@ class Padre:
         self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
         self.photo10 = PhotoImage(file='Padre Jose Pedro.png')
         self.label = Label(self.master, image=self.photo10, bg='black').grid(row=0,column=0)
+        pygame.mixer.music.load('Padre.mp3')
+        pygame.mixer.music.play()
+        self.master.after(19000, self.master.withdraw)
+        self.master.after(19800, self.GoDA)
         self.master.mainloop()
+
+    def GoDA(self):
+        root5 = Toplevel(self.master)
+        da = Daninha(root5)
 
 class PedroBala:
     def __init__(self,master):
@@ -525,7 +549,15 @@ class QueridoDeDeus:
         self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
         self.photo14 = PhotoImage(file='Querido de deus.png')
         self.label = Label(self.master, image=self.photo14, bg='black').grid(row=0,column=0)
+        pygame.mixer.music.load('Querido de Deus.mp3')
+        pygame.mixer.music.play()
+        self.master.after(10000, self.master.withdraw)
+        self.master.after(10800, self.GoPJP)
         self.master.mainloop()
+
+    def GoPJP(self):
+        root10 = Toplevel(self.master)
+        pjp = Padre(root10)
 
 class SemPerna:
     def __init__(self,master):
@@ -574,26 +606,22 @@ class VoltaSeca:
     def Releitura(self):
         pygame.mixer.music.load('releitura2.mp3')
         pygame.mixer.music.play()
-        time.sleep(14)
-        clip = VideoFileClip('releitura2.mp4')
-        clip.preview()
-        self.Releitura2()
+        self.master.after(14000, self.Releitura2)
 
     def Releitura2(self):
+        clip = VideoFileClip('releitura2.mp4')
+        clip.preview()
         pygame.mixer.music.load('releitura3.mp3')
         pygame.mixer.music.play()
-        time.sleep(5)
-        clip2 = VideoFileClip('releitura3.mp4')
-        clip2.preview()
-        del clip2.reader
-        del clip2
-        self.Releitura3()
+        self.master.after(5000, self.Releitura3)
 
     def Releitura3(self):
+        clip2 = VideoFileClip('releitura3.mp4')
+        clip2.preview()
+        clip2.reader.close()
         pygame.mixer.music.load('releitura4.mp3')
         pygame.mixer.music.play()
-        time.sleep(7)
-        self.GoQDD()
+        self.master.after(7000, self.GoQDD)
 
     def GoQDD(self):
         root14 = Toplevel(self.master)
@@ -620,5 +648,3 @@ while (enter!=True):
         main()
     else:
         print("ALGO DEU ERRADO! REPITA A FRASE")
-
-
